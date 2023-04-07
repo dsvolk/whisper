@@ -9,6 +9,7 @@ __pycache__/
 # Audio files
 audio/mp3/*.mp3
 audio/wav/*.wav
+audio/mp4/*.mp4
 
 # Output text
 text/*.txt
