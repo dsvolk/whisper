@@ -2,7 +2,11 @@
 A wrapper for Whisper speech-to-text model by OpenAI
 
 ## Install
-After you clone the repo, 
+1) clone the repo with it's `whisper.cpp` submodule:
+```
+git clone --recurse-submodules https://github.com/dsvolk/whisper.git
+cd whisper
+```
 
 1) build whisper.cpp:
 ```
