@@ -29,6 +29,7 @@ cd ../..
 ```
 make rec
 ```
+Press `Ctrl+C` to stop recording.
 
 ### Transcribe
 Option a) convert the audiofile and do the transcription, language auto-detected:
