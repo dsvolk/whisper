@@ -2,6 +2,11 @@
 A wrapper for Whisper speech-to-text model by OpenAI
 
 ## Install
+### Install ffmpeg audio conversion tool
+```
+sudo apt-get install ffmpeg
+```
+
 ### Clone the repo with it's `whisper.cpp` submodule:
 ```
 git clone --recurse-submodules https://github.com/dsvolk/whisper.git
