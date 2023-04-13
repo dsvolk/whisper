@@ -1,5 +1,5 @@
-# whisper
-A wrapper for Whisper speech-to-text model by OpenAI
+# whisper for MacOS (or Ubuntu, maybe)
+A wrapper for Whisper speech-to-text model by OpenAI. Runs locally on your machine.
 
 ## Install
 ### Install ffmpeg audio conversion tool
