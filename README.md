@@ -1,4 +1,4 @@
-# whisper for MacOS (or Ubuntu, maybe)
+# [Whisper ASR](https://openai.com/research/whisper) for MacOS (or Ubuntu, maybe)
 A wrapper for Whisper speech-to-text model by OpenAI. Runs locally on your machine.
 
 ## Install
