@@ -1,14 +1,12 @@
 rec:
-	ffmpeg -y -f avfoundation -i ":1" audio/mp3/audiocapture.mp3
+	ffmpeg -y -f avfoundation -i ":1" audio/mp3/rec.mp3
 convert:
-	ffmpeg -y -hide_banner -loglevel error -i audio/mp3/input.mp3 -acodec pcm_s16le -ar 16000 audio/wav/audiocapture.wav
-lan_auto:
-	./whisper.cpp/main -m whisper.cpp/models/ggml-large.bin -f audio/wav/audiocapture.wav -nt -l auto
-lan_en:
-	./whisper.cpp/main -m whisper.cpp/models/ggml-large.bin -f audio/wav/audiocapture.wav -nt
-tra:
-	make convert && make lan_auto
+	bash convert.sh
+tra_auto:
+	bash transcribe_auto.sh
+tra_en:
+	bash transcribe_en.sh
 auto:
-	make convert && make lan_auto
+	bash convert.sh && bash transcribe_auto.sh
 en:
-	make convert && make lan_en
+	bash convert.sh && bash transcribe_en.sh
