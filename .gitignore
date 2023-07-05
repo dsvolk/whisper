@@ -14,7 +14,7 @@ audio/wav/*.wav
 audio/mp4/*.mp4
 
 # Output text
-text/*.txt
+transcriptions/*.txt
 
 # Distribution / packaging
 .Python
