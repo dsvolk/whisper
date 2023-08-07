@@ -1,3 +1,6 @@
+upgrade:
+	git submodule update --remote
+update: upgrade
 rec:
 	ffmpeg -y -f avfoundation -i ":1" audio/mp3/rec.mp3
 convert:
