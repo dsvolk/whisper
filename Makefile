@@ -13,5 +13,7 @@ auto:
 	bash convert.sh && bash transcribe_auto.sh
 en:
 	bash convert.sh && bash transcribe_en.sh
+ru:
+	bash convert.sh && bash transcribe_ru.sh
 cron:
 	export VISUAL=nano; crontab -e
