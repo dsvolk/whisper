@@ -1,4 +1,4 @@
-# [Whisper ASR](https://openai.com/research/whisper) for MacOS (or Ubuntu, maybe)
+# 🎙 [Whisper ASR](https://openai.com/research/whisper) for MacOS (or Ubuntu, maybe)
 A wrapper for Whisper speech-to-text model by OpenAI. Runs locally on your machine.
 
 ## Install
@@ -55,4 +55,4 @@ Option b) convert the audiofile and do the transcription, language auto-detected
 make ru
 ```
 ### Output
-The transcriptions are put to `transcriptions/` folder in plain text `.txt` format.
+The transcriptions are put to `transcriptions` folder in plain text `.txt` format.
