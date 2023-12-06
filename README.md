@@ -30,7 +30,10 @@ cd ../..
 ```
 
 ## Run
-### Record an audio:
+### Input
+Put your audio or video file into `audio/input`. 
+
+Or even record an audio (creates `/audio/input/rec.mp3`):
 ```
 make rec
 ```
