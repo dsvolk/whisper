@@ -22,7 +22,7 @@ make
 ### Download the model file:
 ```
 cd models
-./download-ggml-model.sh large
+./download-ggml-model.sh large-v3
 ```
 
 ```
@@ -45,4 +45,9 @@ make auto
 Option b) convert the audiofile and do the transcription, language auto-detected and translated to English:
 ```
 make en
+```
+
+Option b) convert the audiofile and do the transcription, language auto-detected and translated to Russian:
+```
+make ru
 ```
