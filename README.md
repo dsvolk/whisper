@@ -54,3 +54,5 @@ Option b) convert the audiofile and do the transcription, language auto-detected
 ```
 make ru
 ```
+### Output
+The transcriptions are put to `transcriptions/` folder in plain text `.txt` format.
