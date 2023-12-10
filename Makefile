@@ -2,7 +2,7 @@ upgrade:
 	git submodule update --remote
 update: upgrade
 rec:
-	ffmpeg -y -f avfoundation -i ":1" audio/mp3/rec.mp3
+	ffmpeg -y -f avfoundation -i ":1" audio/input/rec.mp3
 convert:
 	bash convert.sh
 tra_auto:
