@@ -3,11 +3,19 @@
 input_dir="audio/input"
 output_dir="audio/wav"
 
-find "${input_dir}" -type f -iname "*.*" -not -name ".DS_Store" | while read -r file; do
-    base_input_file="${file##*/}"
-    input_file="${input_dir}/${base_input_file}"
-    output_file="${output_dir}/${base_input_file}.wav"
-    echo "Converting ${input_file} to ${output_file}..."
-    ffmpeg -y -hide_banner -loglevel error -i "${input_file}" -acodec pcm_s16le -ar 16000 "${output_file}"
-    echo "Done."
+# Create the output directory if it does not exist
+mkdir -p "$output_dir"
+
+find "${input_dir}" -type f -iname "*.*" -not -name ".DS_Store" -print0 | while IFS= read -r -d $'\0' file; do
+    base_input_file="$(basename -- "$file")"
+    base_output_file="${base_input_file%.*}.wav"
+    output_file="${output_dir}/${base_output_file}"
+    echo "Converting \"$file\" to \"$output_file\"..."
+    
+    # Run ffmpeg and check its exit status
+    if ffmpeg -y -hide_banner -loglevel error -i "$file" -acodec pcm_s16le -ar 16000 "$output_file" </dev/null; then
+        echo "Done."
+    else
+        echo "Failed to convert $file" >&2
+    fi
 done
