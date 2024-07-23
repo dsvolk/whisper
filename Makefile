@@ -17,3 +17,9 @@ ru:
 	bash convert.sh && bash transcribe_ru.sh
 cron:
 	export VISUAL=nano; crontab -e
+
+# requires yt-dlp:
+# https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#release-files
+download:
+	./yt-dlp -P ./audio/input/ "$(url)"
+d: download
