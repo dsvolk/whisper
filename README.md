@@ -19,21 +19,34 @@ cd whisper.cpp
 make
 ```
 
-### Download the model file:
+### Download the Whisper-v2 model file:
 ```
 cd models
-./download-ggml-model.sh large-v3
+./download-ggml-model.sh large-v2
 ```
+
+Note: you may try using `large-v3` model instead, but I personally observed it hallucinates more than `large-v2`, especially for non-English languages.
 
 ```
 cd ../..
 ```
 
+### Download the downloader tool:
+From [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#recommended) , download the appropriate binary executable. Put it in the project root (the top-most `whisper` directory). Rename it `yt-dlp` if it was named otherwise. Give it execution rights:
+```
+chmod +x yt-dlp
+```
+
+## Project structure
+- `/input` - this is where you put your original media files, audio or video, in any format.
+- `/wav` - media files converted to `.wav` format, required for `whisper`
+- `/transcriptions` - transcribed media, in plain `.txt`
+
 ## Run
 ### Input
-Put your audio or video file into `audio/input`. 
+Put your audio or video file into `/input`. 
 
-Or even record an audio (creates `/audio/input/rec.mp3`):
+Or even record an audio (creates `/input/rec.mp3`):
 ```
 make rec
 ```
