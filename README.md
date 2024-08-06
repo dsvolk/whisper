@@ -55,15 +55,16 @@ whisper
 │   ├── ...                
 ├── transcriptions/        # Transcribed media, in plain text format.
 │   ├── ...                
-├── yt-dlp/                # yt-dlp tool for downloading media.
+├── yt-dlp                 # yt-dlp tool for downloading media.
 ├── whisper.cpp            # Whisper lives here.
 └── ...       # Other auxiliary files.
 ```
 
 ## Run
-1. you download the media files and put them into `input` directory
-2. it converts all the files from `input` directory to wav files in `wav` directory, overwriting if necessary. 
-3. it transcribes each file in `wav` directory, using one of the language settings: `auto`, `en`, `ru`. 
+The project is designed to be run in three steps, explained below in detail:
+1. download media files and put them into `input` directory
+2. convert all the files from `input` directory to wav files in `wav` directory, overwriting if necessary. 
+3. transcribe each file in `wav` directory, using one of the language settings: `auto`, `en`, `ru`. 
 
 Make sure you remove the original files from `input` when you transcribed them already, otherwise they will be transcribed again. I decided to not to remove the files automatically and leave it to the user, to avoid accidental deletion of valuable files.
 
@@ -83,7 +84,7 @@ make rec
 ```
 Press `Ctrl+C` to stop recording.
 
-### Convert the media files and transcribe all of them
+### 2. & 3. Convert the media files and transcribe all of them
 I provide handy shortcuts for you to convert and transcribe the media files in one go.
 Auto-detect the language of each file and transcribe it:
 ```
@@ -103,6 +104,12 @@ make ru
 You can use your own language tag, if you know it, like `de` for German, `fr` for French, etc., for example:
 ```
 ./convert.sh && ./transcribe.sh de
+```
+
+You can also do the convert and transcribe steps separately, if you want to:
+```
+./convert.sh
+./transcribe.sh auto
 ```
 
 ### Output
