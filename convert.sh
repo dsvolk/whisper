@@ -1,7 +1,7 @@
 #!/bin/bash
 
-input_dir="audio/input"
-output_dir="audio/wav"
+input_dir="input"
+output_dir="wav"
 
 # Create the output directory if it does not exist
 mkdir -p "$output_dir"

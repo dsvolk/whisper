@@ -2,7 +2,7 @@
 
 path_to_whisper_main="whisper.cpp/main" # Replace with the absolute path to your whisper main binary
 path_to_model="whisper.cpp/models/ggml-large-v2.bin" # Replace with the absolute path to your model
-wav_dir="audio/wav"
+wav_dir="wav"
 output_dir="transcriptions"
 whisper_flags="--threads 6 --processors 1 --no-timestamps"
 lang_flags="--language en"

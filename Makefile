@@ -2,7 +2,7 @@ upgrade:
 	git submodule update --remote
 update: upgrade
 rec:
-	ffmpeg -y -f avfoundation -i ":1" audio/input/rec.mp3
+	ffmpeg -y -f avfoundation -i ":1" input/rec.mp3
 convert:
 	bash convert.sh
 tra_auto:
@@ -21,5 +21,5 @@ cron:
 # requires yt-dlp:
 # https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#release-files
 download:
-	./yt-dlp -P ./audio/input/ "$(url)"
+	./yt-dlp -P ./input/ "$(url)"
 d: download
