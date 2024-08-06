@@ -1,6 +1,12 @@
 # 🎙 [Whisper ASR](https://openai.com/research/whisper) for MacOS (or Ubuntu, maybe)
 A wrapper for Whisper speech-to-text model by OpenAI. Runs locally on your machine.
 
+Allows you to download and transcribe media files from the internet, as simple as
+```
+make d url="https://www.youtube.com/watch?v=pP44EPBMb8A"
+make auto
+```
+
 ## Install
 ### Install ffmpeg audio conversion tool
 ```
@@ -45,7 +51,6 @@ Note: you may, of course, instead use your own favorite tool to download media f
 - `/transcriptions` - transcribed media, in plain `.txt`
 
 ## Run
-It runs in two steps: 
 1. you download the media files and put them into `/input` directory
 2. it converts all the files from `/input` directory to wav files in `/wav` directory, overwriting if necessary. 
 3. it transcribes each file in `/wav` directory, using one of the language settings: `auto`, `en`, `ru`. 
@@ -57,7 +62,7 @@ Files in `/wav` directory are automatically removed after transcription, as they
 ### 1. Download media files
 You can download media files using the `yt-dlp` tool, or any other tool you prefer. If you use `yt-dlp`, I provided you a helpful command to download the media files into `/input` directory:
 ```
-make d url="https://www.youtube.com/watch?v=HIVmSewHqMY"
+make d url="https://www.youtube.com/watch?v=pP44EPBMb8A"
 ```
 Replace the URL with the one you want to download.
 
@@ -92,3 +97,15 @@ You can use your own language tag, if you know it, like `de` for German, `fr` fo
 
 ### Output
 The transcriptions are put to `transcriptions` folder in plain text `.txt` format.
+
+### Complete example of a run
+```
+make d url="https://www.youtube.com/watch?v=pP44EPBMb8A"
+make auto
+```
+Voilà! You have the transcription in `/transcriptions` directory.
+
+## Credits
+- [OpenAI](https://openai.com/research/whisper) for the Whisper ASR model
+- [whisper.cpp](https://github.com/ggerganov/whisper.cpp) and personally [@ggerganov](https://github.com/ggerganov) for the C++ wrapper for Whisper
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp?) for the downloader tool
