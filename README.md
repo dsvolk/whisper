@@ -13,7 +13,7 @@ make auto
 sudo apt-get install ffmpeg
 ```
 
-### Clone the repo with it's `whisper.cpp` submodule:
+### Clone this repository with it's `whisper.cpp` submodule:
 ```
 git clone --recurse-submodules https://github.com/dsvolk/whisper.git
 cd whisper
@@ -38,7 +38,7 @@ cd ../..
 ```
 
 ### (Optional) Download the downloader tool:
-From [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#recommended) , download the appropriate binary executable. Put it in the project root (the top-most `whisper` directory). Rename it `yt-dlp` if it was named otherwise. Give it execution rights:
+From [yt-dlp](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#recommended), download the appropriate binary executable. Put it in the project root (the top-most `whisper` directory). Rename it `yt-dlp` if it was named otherwise. Give it execution rights:
 ```
 chmod +x yt-dlp
 ```
@@ -46,9 +46,18 @@ chmod +x yt-dlp
 Note: you may, of course, instead use your own favorite tool to download media files, like `youtube-dl` or `wget` or any other.
 
 ## Project structure
-- `/input` - this is where you put your original media files, audio or video, in any format.
-- `/wav` - media files converted to `.wav` format, required for `whisper`
-- `/transcriptions` - transcribed media, in plain `.txt`
+```
+whisper
+├── input/                 # Your original media files, audio or video, in any format.
+│   ├── ...            
+├── wav/                   # The converted media files, in .wav format.
+│   ├── ...                
+├── transcriptions/        # Transcribed media, in plain text format.
+│   ├── ...                
+├── yt-dlp/                # yt-dlp tool for downloading media.
+├── whisper.cpp            # Whisper lives here.
+└── ...       # Other auxiliary files.
+```
 
 ## Run
 1. you download the media files and put them into `/input` directory
