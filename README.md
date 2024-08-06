@@ -31,11 +31,13 @@ Note: you may try using `large-v3` model instead, but I personally observed it h
 cd ../..
 ```
 
-### Download the downloader tool:
+### (Optional) Download the downloader tool:
 From [https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#recommended) , download the appropriate binary executable. Put it in the project root (the top-most `whisper` directory). Rename it `yt-dlp` if it was named otherwise. Give it execution rights:
 ```
 chmod +x yt-dlp
 ```
+
+Note: you may, of course, instead use your own favorite tool to download media files, like `youtube-dl` or `wget` or any other.
 
 ## Project structure
 - `/input` - this is where you put your original media files, audio or video, in any format.
@@ -43,29 +45,50 @@ chmod +x yt-dlp
 - `/transcriptions` - transcribed media, in plain `.txt`
 
 ## Run
-### Input
-Put your audio or video file into `/input`. 
+It runs in two steps: 
+1. you download the media files and put them into `/input` directory
+2. it converts all the files from `/input` directory to wav files in `/wav` directory, overwriting if necessary. 
+3. it transcribes each file in `/wav` directory, using one of the language settings: `auto`, `en`, `ru`. 
 
-Or even record an audio (creates `/input/rec.mp3`):
+Make sure you remove the original files from `/input` when you transcribed them already, otherwise they will be transcribed again. I decided to not to remove the files automatically and leave it to the user, to avoid accidental deletion of valuable files.
+
+Files in `/wav` directory are automatically removed after transcription, as they are very easy to regenerate.
+
+### 1. Download media files
+You can download media files using the `yt-dlp` tool, or any other tool you prefer. If you use `yt-dlp`, I provided you a helpful command to download the media files into `/input` directory:
+```
+make d url="https://www.youtube.com/watch?v=HIVmSewHqMY"
+```
+Replace the URL with the one you want to download.
+
+#### .. or record your own audio
+You can even record your own audio (creates `/input/rec.mp3`):
 ```
 make rec
 ```
 Press `Ctrl+C` to stop recording.
 
-### Transcribe
-Option a) convert the audiofile and do the transcription, language auto-detected:
+### Convert the media files and transcribe all of them
+I provide handy shortcuts for you to convert and transcribe the media files in one go.
+Auto-detect the language of each file and transcribe it:
 ```
 make auto
 ```
 
-Option b) convert the audiofile and do the transcription, language auto-detected and translated to English:
+Transcribe each file in English:
 ```
 make en
 ```
 
-Option b) convert the audiofile and do the transcription, language auto-detected and translated to Russian:
+Transcribe each file in Russian:
 ```
 make ru
 ```
+
+You can use your own language tag, if you know it, like `de` for German, `fr` for French, etc., for example:
+```
+./convert.sh && ./transcribe.sh de
+```
+
 ### Output
 The transcriptions are put to `transcriptions` folder in plain text `.txt` format.

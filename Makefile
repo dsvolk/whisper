@@ -4,17 +4,19 @@ update: upgrade
 rec:
 	ffmpeg -y -f avfoundation -i ":1" input/rec.mp3
 convert:
-	bash convert.sh
+	./convert.sh
 tra_auto:
-	bash transcribe_auto.sh
+	./transcribe.sh auto
 tra_en:
-	bash transcribe_en.sh
+	./transcribe.sh en
+tra_ru:
+	./transcribe.sh ru
 auto:
-	bash convert.sh && bash transcribe_auto.sh
+	./convert.sh && ./transcribe.sh auto
 en:
-	bash convert.sh && bash transcribe_en.sh
+	./convert.sh && ./transcribe.sh en
 ru:
-	bash convert.sh && bash transcribe_ru.sh
+	./convert.sh && ./transcribe.sh ru
 cron:
 	export VISUAL=nano; crontab -e
 

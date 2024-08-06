@@ -6,7 +6,7 @@ output_dir="wav"
 # Create the output directory if it does not exist
 mkdir -p "$output_dir"
 
-find "${input_dir}" -type f -iname "*.*" -not -name ".DS_Store" -print0 | while IFS= read -r -d $'\0' file; do
+find "${input_dir}" -type f -iname "*.*" -not -name ".DS_Store" -not -name ".gitkeep" -print0 | while IFS= read -r -d $'\0' file; do
     base_input_file="$(basename -- "$file")"
     base_output_file="${base_input_file%.*}.wav"
     output_file="${output_dir}/${base_output_file}"
