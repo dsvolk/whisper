@@ -106,7 +106,7 @@ You can use your own language tag, if you know it, like `de` for German, `fr` fo
 ./convert.sh && ./transcribe.sh de
 ```
 
-You can also do the convert and transcribe steps separately, if you want to:
+You can also do the convert and transcribe steps separately, if you want to, for example:
 ```
 ./convert.sh
 ./transcribe.sh auto
