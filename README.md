@@ -57,7 +57,7 @@ whisper
 │   ├── ...                
 ├── yt-dlp                 # yt-dlp tool for downloading media.
 ├── whisper.cpp            # Whisper lives here.
-└── ...       # Other auxiliary files.
+└── ...                    # Other auxiliary files.
 ```
 
 ## Run
