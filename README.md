@@ -60,23 +60,23 @@ whisper
 ```
 
 ## Run
-1. you download the media files and put them into `/input` directory
-2. it converts all the files from `/input` directory to wav files in `/wav` directory, overwriting if necessary. 
-3. it transcribes each file in `/wav` directory, using one of the language settings: `auto`, `en`, `ru`. 
+1. you download the media files and put them into `input` directory
+2. it converts all the files from `input` directory to wav files in `wav` directory, overwriting if necessary. 
+3. it transcribes each file in `wav` directory, using one of the language settings: `auto`, `en`, `ru`. 
 
-Make sure you remove the original files from `/input` when you transcribed them already, otherwise they will be transcribed again. I decided to not to remove the files automatically and leave it to the user, to avoid accidental deletion of valuable files.
+Make sure you remove the original files from `input` when you transcribed them already, otherwise they will be transcribed again. I decided to not to remove the files automatically and leave it to the user, to avoid accidental deletion of valuable files.
 
-Files in `/wav` directory are automatically removed after transcription, as they are very easy to regenerate.
+Files in `wav` directory are automatically removed after transcription, as they are very easy to regenerate.
 
 ### 1. Download media files
-You can download media files using the `yt-dlp` tool, or any other tool you prefer. If you use `yt-dlp`, I provided you a helpful command to download the media files into `/input` directory:
+You can download media files using the `yt-dlp` tool, or any other tool you prefer. If you use `yt-dlp`, I provided you a helpful command to download the media files into `input` directory:
 ```
 make d url="https://www.youtube.com/watch?v=pP44EPBMb8A"
 ```
 Replace the URL with the one you want to download.
 
 #### .. or record your own audio
-You can even record your own audio (creates `/input/rec.mp3`):
+You can even record your own audio (creates `input/rec.mp3`):
 ```
 make rec
 ```
@@ -112,7 +112,7 @@ The transcriptions are put to `transcriptions` folder in plain text `.txt` forma
 make d url="https://www.youtube.com/watch?v=pP44EPBMb8A"
 make auto
 ```
-Voilà! You have the transcription in `/transcriptions` directory.
+Voilà! You have the transcription in `transcriptions` directory.
 
 ## Credits
 - [OpenAI](https://openai.com/research/whisper) for the Whisper ASR model
