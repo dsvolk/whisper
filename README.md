@@ -47,6 +47,7 @@ chmod +x yt-dlp
 Note: you may, of course, instead use your own favorite tool to download media files, like `youtube-dl` or `wget` or any other.
 
 ## Project structure
+After the installation, the project structure should look like this:
 ```
 whisper
 ├── input/                 # Your original media files, audio or video, in any format.
@@ -55,7 +56,7 @@ whisper
 │   ├── ...                
 ├── transcriptions/        # Transcribed media, in plain text format.
 │   ├── ...                
-├── yt-dlp                 # yt-dlp tool for downloading media.
+├── yt-dlp                 # yt-dlp tool for downloading media (optional).
 ├── whisper.cpp            # Whisper lives here.
 └── ...                    # Other auxiliary files.
 ```
