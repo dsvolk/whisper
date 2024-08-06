@@ -33,6 +33,7 @@ cd models
 
 Note: you may try using `large-v3` model instead, but I personally observed it hallucinates more than `large-v2`, especially for non-English languages.
 
+### Return to the project root:
 ```
 cd ../..
 ```
