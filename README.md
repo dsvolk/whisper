@@ -13,7 +13,7 @@ make auto
 sudo apt-get install ffmpeg
 ```
 
-### Clone this repository with it's `whisper.cpp` submodule:
+### Clone this repository with its `whisper.cpp` submodule:
 ```
 git clone --recurse-submodules https://github.com/dsvolk/whisper.git
 cd whisper
