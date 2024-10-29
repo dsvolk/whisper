@@ -17,6 +17,7 @@ __pycache__/
 
 # Input
 input/
+pre-input/
 
 # Output text
 transcriptions/*.txt
