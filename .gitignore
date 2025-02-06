@@ -2,6 +2,8 @@
 # https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#release-files
 yt-dlp
 
+# IDE
+*.vscode/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
