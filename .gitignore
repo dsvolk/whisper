@@ -19,6 +19,8 @@ __pycache__/
 
 # Input
 input/
+input-backlog/
+input-done/	
 pre-input/
 
 # Output text
